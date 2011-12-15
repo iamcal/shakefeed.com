@@ -1,0 +1,5 @@
+<?
+	define('MYSQL_USER', 'www-rw');
+	define('MYSQL_PASS', 'pass');
+	define('MYSQL_HOST', 'localhost');
+	define('MYSQL_DB', 'shakefeed');
