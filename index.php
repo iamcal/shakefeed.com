@@ -14,7 +14,7 @@
 ?>
 <html>
 <head>
-<title>ShakeFeed: >Best of MLKSHK</title>
+<title>ShakeFeed: Best of MLKSHK</title>
 </head>
 <body>
 
