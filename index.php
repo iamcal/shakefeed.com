@@ -11,6 +11,8 @@
 		$d = date('F jS, Y', $row['date_create']);
 		$days[$d][] = $row;
 	}
+
+	header("Content-type: text/html; charset=utf-8");
 ?>
 <html>
 <head>
