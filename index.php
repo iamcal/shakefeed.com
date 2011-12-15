@@ -12,8 +12,13 @@
 		$days[$d][] = $row;
 	}
 ?>
+<html>
+<head>
+<title>ShakeFeed: >Best of MLKSHK</title>
+</head>
+<body>
 
-<h1>Best of MLKSHK</h1>
+<h1>ShakeFeed: Best of MLKSHK</h1>
 
 <? foreach ($days as $d => $rows){ ?>
 
@@ -31,3 +36,8 @@
 </ul>
 
 <? } ?>
+
+<p>By <a href="http://www.iamcal.com/">Cal</a>. <a href="https://github.com/iamcal/shakefeed.com">Source</a></p>
+
+</body>
+</html>
