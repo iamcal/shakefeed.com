@@ -17,7 +17,7 @@
 <html>
 <head>
 <title>ShakeFeed: Best of MLKSHK</title>
-<link rel="alternate" type="application/rss+xml" title="ShakeFeed href="/rss/">
+<link rel="alternate" type="application/rss+xml" title="ShakeFeed" href="/rss/">
 </head>
 <body>
 
