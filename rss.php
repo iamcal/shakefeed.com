@@ -33,7 +33,7 @@
 	<language>en</language> 
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
-	<generator>http://shakefeed.com//</generator>
+	<generator>http://shakefeed.com/</generator>
 <?
 	foreach ($rows as $row){
 		list($link) = explode(' ', $row['text']);
