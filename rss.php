@@ -36,21 +36,18 @@
 	<generator>http://shakefeed.com/</generator>
 <?
 	foreach ($rows as $row){
-		list($link) = explode(' ', $row['text']);
-		list($junk, $quote) = explode('"', $row['text'], 2);
-		$quote = substr($quote, 0, -1);
 
 		$img = null;
-		if (preg_match('!mlkshk.com/p/(.+)$!', $link, $m)){
+		if (preg_match('!mlkshk.com/p/(.+)$!', $row['link'], $m)){
 			$img = "http://mlkshk.com/r/$m[1]";
 		}
 ?>
 	<item>
-		<title><?=HtmlSpecialChars($quote)?></title>
-		<link><?=$link?></link>
+		<title><?=HtmlSpecialChars($row['quote'])?></title>
+		<link><?=$row['link']?></link>
 		<pubDate><?=d($row['date_create'])?></pubDate>
 		<guid isPermaLink="false">/feed/<?=$row['id']?>/</guid>
-		<description><?=HtmlSpecialChars($quote)?></description>
+		<description><?=HtmlSpecialChars($row['quote'])?></description>
 <? if ($img){ ?>
 		<enclosure url="<?=$img?>" type="image/jpeg"/>
 <? } ?>

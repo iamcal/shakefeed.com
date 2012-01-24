@@ -10,6 +10,16 @@
 		echo "</pre>\n";
 	}
 
+	function db_update($table, $hash, $where){
+
+		$bits = array();
+		foreach(array_keys($hash) as $k){
+			$bits[] = "`$k`='$hash[$k]'";
+		}
+
+		return mysql_query("UPDATE $table SET ".implode(', ',$bits)." WHERE $where");
+	}
+
 	function db_insert_ignore($table, $hash){
 
 		$fields = array_keys($hash);
