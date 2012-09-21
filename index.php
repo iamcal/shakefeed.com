@@ -29,7 +29,7 @@
 <?
 	foreach ($rows as $row){
 ?>
-	<li><a href="<?=$row['link']?>"><?=HtmlSpecialChars($row['quote'])?></a></li>
+	<li><a href="<?=$row['link']?>"><?=$row['quote']?></a></li>
 <? } ?>
 </ul>
 
