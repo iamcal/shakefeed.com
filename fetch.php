@@ -1,9 +1,10 @@
 <?php
 	include('init.php');
+	include('lib_oauth.php');
 
 	echo "Fetching new items: ";
 
-	$json = file_get_contents('https://api.twitter.com/1/statuses/user_timeline.json?screen_name=best_of_mlkshk&count=200');
+	$json = oauth_request($keys, 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=best_of_mlkshk&count=200');
 	$obj = JSON_decode($json, true);
 
 	foreach ($obj as $row){

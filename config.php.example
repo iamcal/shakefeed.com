@@ -1,5 +1,12 @@
 <?
-	define('MYSQL_USER', 'www-rw');
-	define('MYSQL_PASS', 'pass');
+	define('MYSQL_USER', 'username');
+	define('MYSQL_PASS', 'password');
 	define('MYSQL_HOST', 'localhost');
 	define('MYSQL_DB', 'shakefeed');
+
+	$keys = array(
+		'oauth_key'	=> '...',
+		'oauth_secret'	=> '...',
+		'user_key'	=> '...',
+		'user_secret'	=> '...',
+	);
