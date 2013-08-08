@@ -29,7 +29,12 @@
 
 		list($link) = explode(' ', $row['text']);
                 list($junk, $quote) = explode('"', $row['text'], 2);
-                $quote = substr($quote, 0, -1);
+
+		if (substr($quote, -1) == '"'){
+	                $quote = substr($quote, 0, -1);
+		}else{
+			$quote = '"'.$quote;
+		}
 
 		if (!$link || !$quote) continue;
 
