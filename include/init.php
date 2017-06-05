@@ -20,3 +20,7 @@
 		echo HtmlSpecialChars(var_export($foo, 1));
 		echo "</pre>\n";
 	}
+
+	function idx($a, $idx, $def=null){
+		return isset($a[$idx]) ? $a[$idx] : $def;
+	}

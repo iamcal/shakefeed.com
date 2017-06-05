@@ -3,7 +3,10 @@
 
 	$days = array();
 
-	$ret = db_fetch("SELECT * FROM tweets WHERE is_processed=1 ORDER BY date_create DESC LIMIT 100");
+	$limit = intval(idx($_GET, 'limit', 0));
+	$limit = min(10000, max(100, $limit));
+
+	$ret = db_fetch("SELECT * FROM tweets WHERE is_processed=1 ORDER BY date_create DESC LIMIT $limit");
 	foreach ($ret['rows'] as $row){
 
 		$d = date('F jS, Y', $row['date_create']);

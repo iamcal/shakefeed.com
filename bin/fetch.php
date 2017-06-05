@@ -7,6 +7,8 @@
 	$json = oauth_request($keys, 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=best_of_mlkshk&count=200');
 	$obj = JSON_decode($json, true);
 
+	if (!is_array($obj)) die("no tweets found: {$json}");
+
 	foreach ($obj as $row){
 
 		db_insert_ignore('tweets', array(
