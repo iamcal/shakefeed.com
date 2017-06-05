@@ -2,7 +2,7 @@
 	function db_connect(){
 
 		if (!isset($GLOBALS['dbh'])){
-			$GLOBALS['dbh'] = new PDO("mysql:host={$GLOBALS['cfg']['db_host']};dbname={$GLOBALS['cfg']['db_name']}", $GLOBALS['cfg']['db_user'], $GLOBALS['cfg']['db_pass']);
+			$GLOBALS['dbh'] = new PDO("mysql:host={$GLOBALS['cfg']['db_host']};dbname={$GLOBALS['cfg']['db_name']};charset=utf8", $GLOBALS['cfg']['db_user'], $GLOBALS['cfg']['db_pass']);
 		}
 
 		return $GLOBALS['dbh'];
