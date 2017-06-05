@@ -1,6 +1,6 @@
 <?php
-	include('init.php');
-	include('lib_oauth.php');
+	include(__DIR__.'/../include/init.php');
+	include(__DIR__.'/../include/lib_oauth.php');
 
 	echo "Fetching new items: ";
 
@@ -10,9 +10,9 @@
 	foreach ($obj as $row){
 
 		db_insert_ignore('tweets', array(
-			'id'		=> AddSlashes($row['id_str']),
+			'id'		=> $row['id_str'],
 			'date_create'	=> StrToTime($row['created_at']),
-			'text'		=> AddSlashes($row['text']),
+			'text'		=> $row['text'],
 		));
 
 		echo '.';
@@ -22,8 +22,8 @@
 
 	echo "Processing: ";
 
-	$result = mysql_query("SELECT * FROM tweets WHERE is_processed=0");
-	while ($row = mysql_fetch_array($result)){
+	$ret = db_fetch("SELECT * FROM tweets WHERE is_processed=0");
+	foreach ($ret['rows'] as $row){
 
 		if (!preg_match('!^http!', $row['text'])) continue;
 
@@ -45,9 +45,11 @@
 
 		db_update('tweets', array(
 			'is_processed'	=> 1,
-			'quote'		=> AddSlashes(trim($quote)),
-			'link'		=> AddSlashes(trim($link)),
-		), "id='$row[id]'");
+			'quote'		=> trim($quote),
+			'link'		=> trim($link),
+		), "id=:id", array(
+			'id' => $row['id']
+		));
 
 		echo '.';
 	}

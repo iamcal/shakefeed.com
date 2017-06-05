@@ -1,4 +1,4 @@
-<?
+<?php
 	$cfg = array();
 
 	$cfg['db_host']	= 'localhost';
@@ -8,11 +8,11 @@
 
 	include('lib_db.php');
 
-	$keys = array(
-		'oauth_key'	=> '...',
-		'oauth_secret'	=> '...',
-		'user_key'	=> '...',
-		'user_secret'	=> '...',
+        $keys = array(
+		'oauth_key'	=> 'HB8VvCOFWLU4MSwXyvEsaA',
+		'oauth_secret'	=> trim(file_get_contents(__DIR__.'/../secrets/oauth_secret')),
+		'user_key'	=> '6104-c992EHVDJlWebeMjVTiqDKiwzFiS7mQTehiHCDciUk',
+		'user_secret'	=> trim(file_get_contents(__DIR__.'/../secrets/oauth_user_secret')),
 	);
 
 	function dumper($foo){

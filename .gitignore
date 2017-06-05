@@ -1,1 +1,3 @@
 secrets/mysql_password
+secrets/oauth_secret
+secrets/oauth_user_secret

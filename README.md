@@ -13,3 +13,7 @@ This super simple app just shows the feed as text links, letting my browser reme
     service apache2 reload
     cd db
     ./init_db.sh
+
+Add the OAuth key and user secrets into `secrets/oauth_secret` and `secrets/oauth_user_secret`.
+
+The crontab is not currently hooked up, since mlkshk is no longer online.

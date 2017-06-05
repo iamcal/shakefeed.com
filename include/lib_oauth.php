@@ -1,4 +1,4 @@
-<?
+<?php
 	#
 	# $Id$
 	#
@@ -154,7 +154,7 @@
 
 		$url = "{$parts['scheme']}://{$parts['host']}{$port}{$parts['path']}"; 
 
-		if (strlen($path['fragments'])){
+		if (isset($parts['fragments'])){
 			$url .= "#{$part['fragment']}";
 		}
 

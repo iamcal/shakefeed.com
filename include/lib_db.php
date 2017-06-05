@@ -87,6 +87,28 @@
 		return $ret;
 	}
 
+	function db_insert_ignore($table, $fields){
+
+		$bind = array();
+		$i = 1;
+
+		foreach ($fields as $k => $v){
+			$bind["f$i"] = $v;
+			$i++;
+		}
+
+		$k = '`'.implode('`,`', array_keys($fields)).'`';
+		$v = ':'.implode(',:', array_keys($bind));
+
+		$ret = db_query("INSERT IGNORE INTO {$table} ($k) VALUES ($v)", $bind);
+
+		if ($ret['ok']){
+			$ret['insert_id'] = $ret['dbh']->lastInsertId();
+		}
+
+		return $ret;
+	}
+
 	function db_update($table, $fields, $where, $bind){
 
 		$bits = array();
