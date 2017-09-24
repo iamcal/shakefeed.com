@@ -3,4 +3,8 @@ php_flag display_errors on
 php_flag html_errors on
 
 RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^www\.shakefeed\.com$ [NC]
+RewriteRule ^/?(.*)$ https://shakefeed.com/$1 [L,R=permanent]
+
 RewriteRule ^rss/$ /rss.php [L]
