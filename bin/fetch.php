@@ -4,7 +4,7 @@
 
 	echo "Fetching new items: ";
 
-	$json = oauth_request($keys, 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=best_of_mlkshk&count=200');
+	$json = oauth_request($keys, 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=best_of_mltshp&count=200');
 	$obj = JSON_decode($json, true);
 
 	if (!is_array($obj)) die("no tweets found: {$json}");
@@ -40,8 +40,8 @@
 
 		if (!$link || !$quote) continue;
 
-		$out = shell_exec("curl -sSI $link | grep Location");
-		if (preg_match('!Location: (.*)!', $out, $m)){
+		$out = shell_exec("curl -sSI $link | grep -i Location");
+		if (preg_match('!Location: (.*)!i', $out, $m)){
 			$link = $m[1];
 		}
 
