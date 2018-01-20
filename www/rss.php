@@ -28,9 +28,9 @@
 	<title>ShakeFeed</title>
 	<atom:link href="http://shakefeed.com/rss/" rel="self" type="application/rss+xml" />
 	<link>http://shakefeed.com/</link>
-	<description>Best of MLKSHK, in a feed</description>
+	<description>Best of MLTSHP, in a feed</description>
 	<lastBuildDate><?=d(time())?></lastBuildDate>
-	<language>en</language> 
+	<language>en</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>http://shakefeed.com/</generator>
@@ -38,8 +38,8 @@
 	foreach ($rows as $row){
 
 		$img = null;
-		if (preg_match('!mlkshk.com/p/(.+)$!', $row['link'], $m)){
-			$img = "http://mlkshk.com/r/$m[1]";
+		if (preg_match('!mltshp.com/p/(.+)$!', $row['link'], $m)){
+			$img = "http://mltshp.com/r/$m[1]";
 		}
 ?>
 	<item>

@@ -17,12 +17,12 @@
 ?>
 <html>
 <head>
-<title>ShakeFeed: Best of MLKSHK</title>
+<title>ShakeFeed: Best of MLTSHP</title>
 <link rel="alternate" type="application/rss+xml" title="ShakeFeed" href="/rss/">
 </head>
 <body>
 
-<h1>ShakeFeed: Best of MLKSHK</h1>
+<h1>ShakeFeed: Best of <s style="color: #666">MLKSHK</s> MLTSHP</h1>
 
 <? foreach ($days as $d => $rows){ ?>
 
