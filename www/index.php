@@ -31,9 +31,12 @@
 <ul>
 <?
 	foreach ($rows as $row){
+		$link = str_replace('mlkshk.com', 'mltshp.com', $row['link']);
 ?>
-	<li><a href="<?=$row['link']?>"><?=$row['quote']?></a></li>
-<? } ?>
+	<li><a href="<?=$link?>"><?=$row['quote']?></a></li>
+<?
+	}
+?>
 </ul>
 
 <? } ?>
