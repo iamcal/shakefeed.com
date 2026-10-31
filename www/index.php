@@ -24,22 +24,22 @@
 
 <h1>ShakeFeed: Best of <s style="color: #666">MLKSHK</s> MLTSHP</h1>
 
-<? foreach ($days as $d => $rows){ ?>
+<?php foreach ($days as $d => $rows){ ?>
 
 <h2><?=$d?></h2>
 
 <ul>
-<?
+<?php
 	foreach ($rows as $row){
 		$link = str_replace('mlkshk.com', 'mltshp.com', $row['link']);
 ?>
 	<li><a href="<?=$link?>"><?=$row['quote']?></a></li>
-<?
+<?php
 	}
 ?>
 </ul>
 
-<? } ?>
+<?php } ?>
 
 <p>By <a href="http://www.iamcal.com/">Cal</a>. <a href="https://github.com/iamcal/shakefeed.com">Source</a></p>
 

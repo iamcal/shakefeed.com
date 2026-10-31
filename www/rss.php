@@ -34,7 +34,7 @@
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>http://shakefeed.com/</generator>
-<?
+<?php
 	foreach ($rows as $row){
 
 		$img = null;
@@ -48,11 +48,11 @@
 		<pubDate><?=d($row['date_create'])?></pubDate>
 		<guid isPermaLink="false">/feed/<?=$row['id']?>/</guid>
 		<description><?=HtmlSpecialChars($row['quote'])?></description>
-<? if ($img){ ?>
+<?php if ($img){ ?>
 		<enclosure url="<?=$img?>" type="image/jpeg"/>
-<? } ?>
+<?php } ?>
 	</item>
-<?
+<?php
 	}
 ?>
 </channel>
